@@ -1,23 +1,29 @@
 #!/bin/bash
 
 # Set variables
-REPO_URL="https://github.com/yourusername/yourrepo.git"
-LOCAL_DIR="/path/to/local/repo"
-NGINX_HTML_DIR="/path/to/nginx/html"
+REPO_URL="https://github.com/LtFubuki/dads-site"
+WEB_DIR="web"
+TEMP_DIR="temp_update"
+NGINX_HTML_DIR="html"
 
-# Check for updates
-cd $LOCAL_DIR
-git remote update
+# Create the temp directory if it doesn't exist
+mkdir -p ${TEMP_DIR}
 
-if ! git status -uno | grep -q 'Your branch is up to date'; then
+# Download the web files to the temp dir
+wget -q --show-progress --recursive --no-parent --no-clobber --no-check-certificate --directory-prefix=${TEMP_DIR} ${REPO_URL}/raw/main/${WEB_DIR}/
+
+# Compare and update the web files if there's a change
+if ! rsync -rucn --exclude '.git' ${TEMP_DIR}raw/main/${WEB_DIR}/ ${NGINX_HTML_DIR}/ | grep -q '^'; then
     echo "Updating website..."
-    git pull
-
-    # Copy the updated files to the Nginx HTML directory
-    cp -R $LOCAL_DIR/html/* $NGINX_HTML_DIR
+    
+    # Update the web files
+    rsync -ruc --exclude '.git' ${TEMP_DIR}raw/main/${WEB_DIR}/ ${NGINX_HTML_DIR}/
 
     # Restart the web container to apply the changes
     docker-compose restart web
 else
     echo "Website is up to date."
 fi
+
+# Remove the temp directory
+rm -rf ${TEMP_DIR}
