@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set variables
-REPO_URL="https://github.com/LtFubuki/dads-site"
+REPO_URL="https://github.com/LtFubuki/site-1"
 WEB_DIR="web"
 TEMP_DIR="temp_update"
 NGINX_HTML_DIR="html"
