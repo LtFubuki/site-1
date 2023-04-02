@@ -2,7 +2,7 @@
 
 # Set repository URL and local directories
 REPO_URL="https://github.com/LtFubuki/site-1/archive/refs/heads/main.zip"
-LOCAL_DIR="/path/to/your/local/directory"
+LOCAL_DIR="/site-1"
 TMP_DIR="/tmp/site-1-main"
 
 # Enter the local directory
