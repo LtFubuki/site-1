@@ -5,6 +5,7 @@ REPO_URL="https://github.com/LtFubuki/site-1/archive/refs/heads/main.zip"
 LOCAL_DIR="/home/pi/site-1"
 LOCAL_WEB_DIR="${LOCAL_DIR}/web"
 TMP_DIR="/tmp/site-1-main"
+COMPOSE_DIR="/home/pi/site-1"
 
 # Create the local 'web' directory if it doesn't exist
 mkdir -p "$LOCAL_WEB_DIR"
@@ -23,8 +24,14 @@ while true; do
     # Copy the updated 'web' folder to the local folder
     cp -r "$TMP_DIR/web" "$LOCAL_DIR"
 
+    # Change to the directory containing the docker-compose.yml file
+    cd "$COMPOSE_DIR"
+
     # Restart the static_website service in Docker Compose
     docker-compose restart static_website
+
+    # Change back to the original directory
+    cd -
   else
     echo "No changes detected."
   fi
