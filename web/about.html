@@ -26,3 +26,14 @@
 <p>Warm Regards, Eddy Howard</p>
 </body>
 </html>
+
+<!-- Add a script to fetch the menu content and insert it into the "menu" div -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
