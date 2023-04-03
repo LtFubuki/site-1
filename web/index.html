@@ -1,4 +1,4 @@
-<!-- index.html -->
+!-- index.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Include the menu using an iframe -->
-  <iframe src="menu.html" frameborder="0" scrolling="no" style="width: 100%;"></iframe>
+  <!-- Add a div with an id of "menu" where the menu will be inserted -->
+  <div id="menu"></div>
     
     <style>
       body {
@@ -144,4 +144,18 @@
   </div>
 </body>
 </html>
+
+<!-- Add a script to fetch the menu content and insert it into the "menu" div -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
+
+
+
 
