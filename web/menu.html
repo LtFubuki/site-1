@@ -1,0 +1,45 @@
+<!-- menu.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .menu {
+      background-color: #007bff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .menu a:last-child {
+      margin-right: 0;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+    }
+
+    .search input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+    </div>
+    <div class="search">
+      <input type="search" placeholder="Search...">
+      <img src="search-icon.svg" alt="Search" width="16" height="16" style="cursor:pointer">
+    </div>
+  </div>
+</body>
+</html>
