@@ -21,6 +21,9 @@ while true; do
   if ! diff -qr "$TMP_DIR/web" "$LOCAL_WEB_DIR"; then
     echo "Changes detected. Updating the local folder and restarting the static_website service."
 
+    # Remove the existing local 'web' folder
+    rm -rf "$LOCAL_WEB_DIR"
+
     # Copy the updated 'web' folder to the local folder
     cp -r "$TMP_DIR/web" "$LOCAL_DIR"
 
