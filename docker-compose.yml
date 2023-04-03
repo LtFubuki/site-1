@@ -26,6 +26,8 @@ services:
   static_website:
     build: .
     restart: always
+    volumes:
+      - "/home/pi/site-1/web:/usr/share/nginx/html:ro"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.static_website.rule=Host(`alicam.org`)"
