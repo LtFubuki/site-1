@@ -23,12 +23,14 @@
 
     <!-- Add a script to fetch the menu content and insert it into the "menu" div -->
     <script>
-        fetch('menu.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menu').innerHTML = data;
-            });
-    </script>
+  fetch('menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu').innerHTML = data;
+      attachMenuToggleEvent(); // Call the menu toggle function here
+    });
+</script>
+
 </body>
 </html>
 
