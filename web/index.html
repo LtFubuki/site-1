@@ -2,49 +2,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <meta charset="UTF-8">
-  
-  <title>Ed Howard for Community Member</title>
-  
-  <!-- Add the styles for the main content and menu -->
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Add the shared styles -->
-  <link rel="stylesheet" href="shared.css">
-
+    <meta charset="UTF-8">
+    <title>Ed Howard for Community Member</title>
+    <!-- Add the styles for the main content and menu -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add the shared styles -->
+    <link rel="stylesheet" href="shared.css">
 </head>
 <body>
-  
-  <!-- Add a div with an id of "menu" where the menu will be inserted -->
-  <div id="menu"></div>
-    
-  </head>
-  <body>
-    
+    <!-- Add a div with an id of "menu" where the menu will be inserted -->
+    <div id="menu"></div>
+
     <header></header>
-   
+
     <div class="container">
-    
-    <p>As a fellow community member, I am eager to connect with you, discuss your concerns, and answer any questions you may have. Please don't hesitate to reach out, and I'll ensure our conversations are engaging and informative.</p>
-    <p>Thank you for taking the time to visit and learn more about my campaign. Your support and involvement mean the world to me, and together, we can make a difference in our local schools and community.</p>
-    
-    <button onclick="window.location.href='mailto:eddyhoward@ed-howard.com'">Send me an email</button>
+        <p>As a fellow community member, I am eager to connect with you, discuss your concerns, and answer any questions you may have. Please don't hesitate to reach out, and I'll ensure our conversations are engaging and informative.</p>
+        <p>Thank you for taking the time to visit and learn more about my campaign. Your support and involvement mean the world to me, and together, we can make a difference in our local schools and community.</p>
+        <button onclick="window.location.href='mailto:eddyhoward@ed-howard.com'">Send me an email</button>
+    </div>
 
-  </div>
-
-  </body>
-</html>
-
-<!-- Add a script to fetch the menu content and insert it into the "menu" div -->
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu').innerHTML = data;
-      });
-  </script>
-
+    <!-- Add a script to fetch the menu content and insert it into the "menu" div -->
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
 
