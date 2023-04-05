@@ -67,6 +67,11 @@ a:hover {
 header {
   background-color: #f8f9fa;
   padding: 2rem 0;
+  background-image: url("https://drive.google.com/uc?export=view&id=1T0z_kKhL3rA0Z-BrU1buRncrr5VALop8");
+  background-size: cover;
+  background-position: center;
+  height: 20%;
+  width: 100%;
 }
 
 .container h1, .container h2 {
