@@ -103,3 +103,14 @@ button {
 button:hover {
   background-color: #0069d9;
 }
+
+.collapse.show {
+  position: relative;
+  z-index: 1001;
+  background-color: #fff;
+}
+
+
+
+
+
